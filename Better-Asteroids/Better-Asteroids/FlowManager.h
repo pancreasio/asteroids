@@ -8,6 +8,7 @@ namespace flowspace {
 	enum gameState{
 		menustate, gameplaystate
 	};
+	extern Texture ship;
 	extern gameState currentstate;
 	extern bool gameSwitch;
 	void initGame();

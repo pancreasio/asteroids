@@ -3,6 +3,7 @@
 namespace flowspace {
 	gameState currentstate;
 	bool gameSwitch;
+	Texture ship = LoadTexture("res/ship.png");
 
 	void initGame() {
 		InitWindow(800, 600, "(title here)");

@@ -27,6 +27,8 @@ namespace flowspace {
 	}
 
 	void generalDraw() {
+		BeginDrawing();
+		ClearBackground(BLACK);
 		switch (currentstate) {
 		case menustate:
 			menuspace::drawMenu();
@@ -35,5 +37,6 @@ namespace flowspace {
 			gamespace::drawGame();
 			break;
 		}
+		EndDrawing();
 	}
 }

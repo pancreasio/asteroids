@@ -1,8 +1,12 @@
 #include "Game.h"
 namespace flowspace {
 	namespace gamespace {
-		void updateGame() {
+		Vector2 position = { 0,0 };
 
+		void updateGame() {
+			if (IsKeyPressed(KEY_Q)) {
+				exitGame();
+			}
 		}
 		void drawGame() {
 

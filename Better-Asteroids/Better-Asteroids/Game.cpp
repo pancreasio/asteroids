@@ -5,15 +5,15 @@ namespace flowspace {
 		player p1;
 		int shipswidth = 237;
 		int shipsheight = 291;
-		float shipscale = 2.0f;
+		float shipscale = 0.15f;
 		Rectangle sourceRec = { 0.0f, 0.0f, (float)shipswidth, (float)shipsheight};
 		Rectangle destRec = { (float)screenwidth / 2, (float)screenheight / 2, (float)shipswidth * shipscale , (float)shipsheight * shipscale};
-		Vector2 colliderAllignment = { (float)shipswidth, (float)shipsheight };
+		Vector2 colliderAllignment = { (float)shipswidth * shipscale - (float)shipswidth/2 * shipscale, (float)shipsheight * shipscale - (float)shipsheight / 2 * shipscale};
 
 		void initGameplay() {
 			p1.position.x = screenwidth / 2;
 			p1.position.y = screenheight/ 2;
-			p1.acceleration = 4;
+			p1.acceleration = 1;
 			p1.rotation = 0;
 			p1.colliderRadius = 4;
 			ship = LoadTexture("../res/ship.png");

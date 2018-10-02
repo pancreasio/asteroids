@@ -13,28 +13,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\FlowManager.cpp">
+    <ClCompile Include="..\..\src\FlowManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Main.cpp">
+    <ClCompile Include="..\..\src\Game.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Game.cpp">
-      <Filter>Archivos de origen\States</Filter>
+    <ClCompile Include="..\..\src\Main.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Menu.cpp">
-      <Filter>Archivos de origen\States</Filter>
+    <ClCompile Include="..\..\src\Menu.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\FlowManager.h">
+    <ClInclude Include="..\..\src\FlowManager.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Menu.h">
-      <Filter>Archivos de origen\StatesHeaders</Filter>
+    <ClInclude Include="..\..\src\Game.h">
+      <Filter>Archivos de origen</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Game.h">
-      <Filter>Archivos de origen\StatesHeaders</Filter>
+    <ClInclude Include="..\..\src\Menu.h">
+      <Filter>Archivos de origen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

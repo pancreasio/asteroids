@@ -16,7 +16,7 @@ namespace flowspace {
 			p1.acceleration = 0.2;
 			p1.rotation = 0;
 			p1.colliderRadius = 4;
-			ship = LoadTexture("../res/ship.png");
+			ship = LoadTexture("../../res/ship.png");
 
 		}
 

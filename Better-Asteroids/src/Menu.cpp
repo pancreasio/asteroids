@@ -10,7 +10,7 @@ namespace flowspace {
 			}
 		}
 		void drawMenu() {
-			DrawText("AAAAAAAAAAAAA",200,300, 50, RED);
+			DrawText("asteBoids",200,300, 50, RED);
 			DrawText("Presiona V para comenzar, Q para salir", 100, 400, 30, GRAY);
 		}
 		void exitMenu() {

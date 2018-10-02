@@ -13,7 +13,7 @@ namespace flowspace {
 		void initGameplay() {
 			p1.position.x = screenwidth / 2;
 			p1.position.y = screenheight/ 2;
-			p1.acceleration = 1;
+			p1.acceleration = 0.2;
 			p1.rotation = 0;
 			p1.colliderRadius = 4;
 			ship = LoadTexture("../res/ship.png");
@@ -25,10 +25,12 @@ namespace flowspace {
 				exitGame();
 			}
 			if (IsKeyDown(KEY_W)) {
-				p1.position.y -= 2;
+				p1.position.y -= p1.speed.y * p1.acceleration;
+				p1.position.x -= p1.speed.x * p1.acceleration;
 			}
 			if (IsKeyDown(KEY_S)) {
-				p1.position.y += 2;
+				p1.position.y += p1.speed.y * p1.acceleration;
+				p1.position.x += p1.speed.x * p1.acceleration;
 			}
 			if (IsKeyDown(KEY_D)) {
 				p1.rotation += 0.2f;
@@ -36,6 +38,11 @@ namespace flowspace {
 			if (IsKeyDown(KEY_A)) {
 				p1.rotation -= 0.2f;
 			}
+
+
+			p1.speed.y = cos(p1.rotation);
+			p1.speed.x = sin(p1.rotation);
+
 			destRec.x = p1.position.x;
 			destRec.y = p1.position.y;
 			

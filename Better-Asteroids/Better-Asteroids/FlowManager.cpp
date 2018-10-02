@@ -3,10 +3,10 @@
 namespace flowspace {
 	gameState currentstate;
 	bool gameSwitch;
-	Texture ship = LoadTexture("res/ship.png");
-
+	unsigned int screenheight = 600;
+	unsigned int screenwidth = 800;
 	void initGame() {
-		InitWindow(800, 600, "(title here)");
+		InitWindow(screenwidth, screenheight, "ASTEROIDS");
 		gameSwitch = true;
 		currentstate = menustate;
 		gameLoop();

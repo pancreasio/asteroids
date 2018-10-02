@@ -7,9 +7,10 @@ namespace flowspace {
 		struct player{
 			Vector2 position;
 			Vector2 speed;
-			Vector2 acceleration;
+			float acceleration;
+			float rotation;
 			unsigned int shipHeight;
-			unsigned int colliderRadius;
+			float colliderRadius;
 		};
 
 		struct asteroid {
@@ -17,6 +18,7 @@ namespace flowspace {
 			Vector2 speed;
 			unsigned int colliderRadius;
 		};
+		void initGameplay();
 		void updateGame();
 		void drawGame();
 		void exitGame();

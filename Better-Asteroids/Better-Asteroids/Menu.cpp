@@ -14,6 +14,7 @@ namespace flowspace {
 			DrawText("Presiona V para comenzar, Q para salir", 100, 400, 30, GRAY);
 		}
 		void exitMenu() {
+			gamespace::initGameplay();
 			currentstate = gameplaystate;
 		}
 		void exitGame() {

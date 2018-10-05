@@ -16,14 +16,14 @@
     <ClCompile Include="..\..\src\FlowManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Game.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Game.cpp">
+      <Filter>Archivos de origen\States</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\Menu.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -31,10 +31,10 @@
       <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Game.h">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\StatesHeaders</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Menu.h">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\StatesHeaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

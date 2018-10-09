@@ -43,18 +43,18 @@ namespace flowspace {
 					exitGame();
 				}
 				if (IsKeyDown(KEY_W)) {
-					p1.position.y -= p1.speed.y * p1.acceleration * GetFrameTime();
-					p1.position.x += p1.speed.x * p1.acceleration * GetFrameTime();
+					p1.position.y -= p1.speed.y * p1.acceleration; //* GetFrameTime();
+					p1.position.x += p1.speed.x * p1.acceleration; //* GetFrameTime();
 				}
 				if (IsKeyDown(KEY_S)) {
-					p1.position.y += p1.speed.y * p1.acceleration * GetFrameTime();
-					p1.position.x -= p1.speed.x * p1.acceleration * GetFrameTime();
+					p1.position.y += p1.speed.y * p1.acceleration; //* GetFrameTime();
+					p1.position.x -= p1.speed.x * p1.acceleration; //* GetFrameTime();
 				}
 				if (IsKeyDown(KEY_D)) {
-					p1.rotation += 10.0f * GetFrameTime();
+					p1.rotation += 10.0f;// *GetFrameTime();
 				}
 				if (IsKeyDown(KEY_A)) {
-					p1.rotation -= 10.0f * GetFrameTime();
+					p1.rotation -= 10.0f;// *GetFrameTime();
 				}
 
 				destRec.x = p1.position.x;

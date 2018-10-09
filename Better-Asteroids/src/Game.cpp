@@ -18,7 +18,7 @@ namespace flowspace {
 			p1.acceleration = 8.0;
 			p1.rotation = 0;
 			p1.colliderRadius = 4;
-			ship = LoadTexture("../../res/ship.png");
+			ship = LoadTexture("res/ship.png");
 
 		}
 
@@ -30,11 +30,11 @@ namespace flowspace {
 				u1 = auxiliarX - p1.position.x , u2 = auxiliarY - p1.position.y, v1 = GetMouseX() - p1.position.x, v2 = GetMouseY() - p1.position.y;
 
 				//p1.rotation = acos(((u1 * v1) + (u2 * v1))/sqrt(u1 * u1 + u2 * u2)*2);
-				system("cls");
+				/*system("cls");
 				std::cout << "X " << auxiliarX << std::endl;
 				std::cout << "Y " << auxiliarY << std::endl;
 				std::cout << "ROTACION FORRAAAA    " << p1.rotation;
-
+				*/
 
 				p1.speed.y = cos(DEG2RAD*p1.rotation);
 				p1.speed.x = sin(DEG2RAD*p1.rotation);
@@ -43,18 +43,18 @@ namespace flowspace {
 					exitGame();
 				}
 				if (IsKeyDown(KEY_W)) {
-					p1.position.y -= p1.speed.y * p1.acceleration; //* GetFrameTime();
-					p1.position.x += p1.speed.x * p1.acceleration; //* GetFrameTime();
+					p1.position.y -= p1.speed.y * p1.acceleration * GetFrameTime();
+					p1.position.x += p1.speed.x * p1.acceleration * GetFrameTime();
 				}
 				if (IsKeyDown(KEY_S)) {
-					p1.position.y += p1.speed.y * p1.acceleration; //* GetFrameTime();
-					p1.position.x -= p1.speed.x * p1.acceleration; //* GetFrameTime();
+					p1.position.y += p1.speed.y * p1.acceleration * GetFrameTime();
+					p1.position.x -= p1.speed.x * p1.acceleration * GetFrameTime();
 				}
 				if (IsKeyDown(KEY_D)) {
-					p1.rotation += 10.0f;// *GetFrameTime();
+					p1.rotation += 10.0f * GetFrameTime();
 				}
 				if (IsKeyDown(KEY_A)) {
-					p1.rotation -= 10.0f;// *GetFrameTime();
+					p1.rotation -= 10.0f * GetFrameTime();
 				}
 
 				destRec.x = p1.position.x;

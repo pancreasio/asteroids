@@ -10,7 +10,8 @@ namespace flowspace {
 		struct player{
 			Vector2 position;
 			Vector2 speed;
-			float acceleration;
+			Vector2 acceleration;
+			float defaultAcceleration;
 			float rotation;
 			unsigned int shipHeight;
 			float colliderRadius;

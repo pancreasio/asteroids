@@ -7,7 +7,9 @@ namespace flowspace {
 	namespace menuspace {
 		void updateMenu();
 		void drawMenu();
-		void exitMenu();
+		void initMenu();
+		void startGame();
+		void viewCredits();
 		void exitGame();
 	}
 }

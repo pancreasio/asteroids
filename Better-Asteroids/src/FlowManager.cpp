@@ -5,9 +5,11 @@ namespace flowspace {
 	bool gameSwitch;
 	unsigned int screenheight = 600;
 	unsigned int screenwidth = 800;
+	Vector2 mousePosition;
 	void initGame() {
 		InitWindow(screenwidth, screenheight, "ASTEROIDS");
 		gameSwitch = true;
+		menuspace::initMenu();
 		currentstate = menustate;
 		gameLoop();
 	}
@@ -23,6 +25,11 @@ namespace flowspace {
 				gamespace::updateGame();
 				generalDraw();
 					break;
+
+			case creditsstate:
+				creditsspace::updateCredits();
+				generalDraw();
+				break;
 			}
 		}
 	}
@@ -36,6 +43,9 @@ namespace flowspace {
 			break;
 		case gameplaystate:
 			gamespace::drawGame();
+			break;
+		case creditsstate:
+			creditsspace::drawCredits();
 			break;
 		}
 		EndDrawing();

@@ -70,9 +70,6 @@ namespace flowspace {
 				p1.acceleration.x = normalizedDirection.x * p1.defaultAcceleration;
 				p1.acceleration.y = normalizedDirection.y * p1.defaultAcceleration;
 
-				if (IsKeyPressed(KEY_Q)) {
-					exitGame();
-				}
 				if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
 					p1.position.y += p1.acceleration.y * GetFrameTime();
 					p1.position.x += p1.acceleration.x * GetFrameTime();
@@ -121,6 +118,7 @@ namespace flowspace {
 		}
 		void exitGame() {
 			UnloadTexture(ship);
+			menuspace::initMenu();
 			currentstate = menustate;
 		}
 	}

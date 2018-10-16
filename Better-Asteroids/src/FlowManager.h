@@ -3,11 +3,19 @@
 #include "raylib.h"
 #include "Menu.h"
 #include "Game.h"
+#include "Credits.h"
 #include <iostream>
 namespace flowspace {
 	enum gameState{
-		menustate, gameplaystate
+		menustate, gameplaystate, creditsstate
 	};
+
+	struct button {
+		Vector2 position;
+		Vector2 size;
+		std::string text;
+	};
+	extern Vector2 mousePosition;
 	extern gameState currentstate;
 	extern bool gameSwitch;
 	extern unsigned int screenwidth;

@@ -9,7 +9,6 @@ namespace flowspace {
 		
 		struct player{
 			Vector2 position;
-			Vector2 speed;
 			Vector2 acceleration;
 			float defaultAcceleration;
 			float rotation;

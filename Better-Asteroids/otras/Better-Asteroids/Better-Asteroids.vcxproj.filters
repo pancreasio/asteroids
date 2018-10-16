@@ -28,6 +28,9 @@
     <ClCompile Include="..\..\src\Credits.cpp">
       <Filter>Archivos de origen\States</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\GameOver.cpp">
+      <Filter>Archivos de origen\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\FlowManager.h">
@@ -40,6 +43,9 @@
       <Filter>Archivos de origen\StatesHeaders</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Credits.h">
+      <Filter>Archivos de origen\StatesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameOver.h">
       <Filter>Archivos de origen\StatesHeaders</Filter>
     </ClInclude>
   </ItemGroup>

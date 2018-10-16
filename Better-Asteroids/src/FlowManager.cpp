@@ -30,6 +30,11 @@ namespace flowspace {
 				creditsspace::updateCredits();
 				generalDraw();
 				break;
+			case gameoverstate:
+				gameoverspace::updateGameOver();
+				generalDraw();
+				break;
+
 			}
 		}
 	}
@@ -47,6 +52,10 @@ namespace flowspace {
 		case creditsstate:
 			creditsspace::drawCredits();
 			break;
+		case gameoverstate:
+			gameoverspace::drawGameOver();
+			break;
+
 		}
 		EndDrawing();
 	}

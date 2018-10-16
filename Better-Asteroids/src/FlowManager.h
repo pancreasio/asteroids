@@ -4,10 +4,11 @@
 #include "Menu.h"
 #include "Game.h"
 #include "Credits.h"
+#include "GameOver.h"
 #include <iostream>
 namespace flowspace {
 	enum gameState{
-		menustate, gameplaystate, creditsstate
+		menustate, gameplaystate, creditsstate, gameoverstate
 	};
 
 	struct button {

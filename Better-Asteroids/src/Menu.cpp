@@ -55,7 +55,7 @@ namespace flowspace {
 			DrawText("CREDITS", credits.position.x + 10, credits.position.y + 10, 45, BLACK);
 			DrawRectangle(quit.position.x, quit.position.y, quit.size.x, quit.size.y, WHITE);
 			DrawText("QUIT", quit.position.x + 55, quit.position.y + 10, 45, BLACK);
-			DrawText("version 0.9",screenwidth -150,screenheight-20,20,GRAY);
+			DrawText("version 1.0",screenwidth -150,screenheight-20,20,GRAY);
 		}
 		void startGame() {
 			gamespace::initGameplay();

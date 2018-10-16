@@ -17,6 +17,12 @@ namespace flowspace {
 			float colliderRadius;
 		};
 
+		struct button {
+			Vector2 position;
+			Rectangle collider;
+			std::string text;
+		};
+
 		struct asteroid {
 			Vector2 position;
 			Vector2 speed;

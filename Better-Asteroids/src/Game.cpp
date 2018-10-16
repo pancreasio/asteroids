@@ -3,6 +3,7 @@ namespace flowspace {
 	namespace gamespace {
 		Texture2D ship;
 		player p1;
+		button pauseButton;
 		int shipswidth = 237;
 		int shipsheight = 291;
 		float shipscale = 0.15f;
@@ -55,18 +56,15 @@ namespace flowspace {
 				normalizedDirection.x = directionVector.x / directionModule;
 				normalizedDirection.y = directionVector.y / directionModule;
 
-				p1.acceleration.x = abs(normalizedDirection.x * p1.defaultAcceleration);
-				p1.acceleration.y = abs(normalizedDirection.y * p1.defaultAcceleration);
-
-				p1.speed.y = cos(DEG2RAD*p1.rotation);
-				p1.speed.x = sin(DEG2RAD*p1.rotation);
+				p1.acceleration.x = normalizedDirection.x * p1.defaultAcceleration;
+				p1.acceleration.y = normalizedDirection.y * p1.defaultAcceleration;
 
 				if (IsKeyPressed(KEY_Q)) {
 					exitGame();
 				}
 				if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
-					p1.position.y -= p1.speed.y * p1.defaultAcceleration * GetFrameTime();
-					p1.position.x += p1.speed.x * p1.defaultAcceleration * GetFrameTime();
+					p1.position.y += p1.acceleration.y * GetFrameTime();
+					p1.position.x += p1.acceleration.x * GetFrameTime();
 				}
 				std::system("cls");
 				std::cout <<"aceleracion x: " << p1.acceleration.x << std::endl;

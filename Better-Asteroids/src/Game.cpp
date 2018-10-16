@@ -4,6 +4,7 @@ namespace flowspace {
 		Texture2D ship;
 		player p1;
 		button pauseButton;
+		button exitButton;
 		int shipswidth = 237;
 		int shipsheight = 291;
 		float shipscale = 0.15f;
@@ -16,6 +17,7 @@ namespace flowspace {
 		Vector2 colliderAllignment = { (float)shipswidth /2 * shipscale , (float)shipsheight /2 * shipscale};
 
 		void initGameplay() {
+			isPaused = false;
 			p1.position.x = screenwidth / 2;
 			p1.position.y = screenheight / 2; 
 			p1.defaultAcceleration = 400.0;
@@ -24,14 +26,23 @@ namespace flowspace {
 			p1.rotation = 0;
 			p1.colliderRadius = 4;
 			ship = LoadTexture("res/ship.png");
+			pauseButton.position.x = screenwidth - 60.0;
+			pauseButton.position.y = 0;
+			pauseButton.size.x = 60.0;
+			pauseButton.size.y = 60.0;
+			exitButton.position.x = screenwidth /2 - 120;
+			exitButton.position.y = screenheight /2 + 60;
+			exitButton.size.x = 240;
+			exitButton.size.y = 60.0;
 
 		}
 
 		void updateGame() {
 
+			mousePosition = { (float)GetMouseX(),(float)GetMouseY() };
+
 			if (!isPaused) {
 				
-				mousePosition = {(float)GetMouseX(),(float)GetMouseY()};
 				directionVector.x = mousePosition.x - p1.position.x;
 				directionVector.y = mousePosition.y - p1.position.y;
 
@@ -77,9 +88,22 @@ namespace flowspace {
 				destRec.x = p1.position.x;
 				destRec.y = p1.position.y;
 			}
+			else{
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					if (exitButton.position.x <= mousePosition.x && mousePosition.x <= exitButton.position.x + exitButton.size.x) {
+						if (exitButton.position.y <= mousePosition.y && mousePosition.y <= exitButton.position.y + exitButton.size.y) {
+							exitGame();
+						}
+					}
+				}
+			}
 
-			if (IsKeyPressed(KEY_P)) {
-				isPaused = !isPaused;
+			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+				if (pauseButton.position.x <= mousePosition.x && mousePosition.x <= pauseButton.position.x + pauseButton.size.x) {
+					if (pauseButton.position.y <= mousePosition.y && mousePosition.y <=pauseButton.position.y + pauseButton.size.y) {
+						isPaused = !isPaused;
+					}
+				}
 			}
 
 		}
@@ -87,7 +111,13 @@ namespace flowspace {
 			DrawTexturePro(ship, sourceRec, destRec, colliderAllignment, p1.rotation, WHITE);
 			DrawCircleV(p1.position, p1.colliderRadius, GREEN);
 			DrawLine(p1.position.x, p1.position.y, GetMouseX(), GetMouseY(), GREEN);
-			if (isPaused) DrawText("PAUSED",screenwidth/2 -120, screenheight/2 - 30, 60, RED);
+			DrawRectangle(pauseButton.position.x + pauseButton.size.x / 6, pauseButton.position.y +10 , pauseButton.size.x / 4, pauseButton.size.y -20, WHITE);
+			DrawRectangle(pauseButton.position.x + 4* pauseButton.size.x / 6, pauseButton.position.y + 10, pauseButton.size.x / 4, pauseButton.size.y -20, WHITE);
+			if (isPaused) {
+				DrawText("PAUSED", screenwidth / 2 - 120, screenheight / 2 - 30, 60, WHITE);
+				DrawRectangle(exitButton.position.x,exitButton.position.y,exitButton.size.x,exitButton.size.y,WHITE);
+				DrawText("Exit Game", exitButton.position.x +12, exitButton.position.y+10, 45, BLACK);
+			}
 		}
 		void exitGame() {
 			UnloadTexture(ship);

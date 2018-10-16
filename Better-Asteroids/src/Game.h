@@ -18,7 +18,7 @@ namespace flowspace {
 
 		struct button {
 			Vector2 position;
-			Rectangle collider;
+			Vector2 size;
 			std::string text;
 		};
 
@@ -28,7 +28,7 @@ namespace flowspace {
 			unsigned int colliderRadius;
 		};
 
-		extern bool isPasued;
+		extern bool isPaused;
 		void initGameplay();
 		void updateGame();
 		void drawGame();

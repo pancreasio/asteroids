@@ -89,6 +89,7 @@ namespace flowspace {
 			DrawTexturePro(ship, sourceRec, destRec, colliderAllignment, p1.rotation, WHITE);
 			DrawCircleV(p1.position, p1.colliderRadius, GREEN);
 			DrawLine(p1.position.x, p1.position.y, GetMouseX(), GetMouseY(), GREEN);
+			if (isPaused) DrawText("PAUSED",screenwidth/2 -120, screenheight/2 - 30, 60, RED);
 		}
 		void exitGame() {
 			UnloadTexture(ship);

@@ -22,8 +22,11 @@ namespace flowspace {
 
 		}
 		void drawCredits() {
+			DrawText("Game by Julian Serulnikov",screenwidth/2 -300,screenheight/2-200,50,WHITE);
+			DrawText("Made with Raylib", screenwidth / 2 - 210, screenheight / 2 - 130, 50, WHITE);
 			DrawRectangle(back.position.x, back.position.y, back.size.x, back.size.y, WHITE);
 			DrawText("BACK", back.position.x + 32, back.position.y + 10, 45, BLACK);
+			DrawText("version 0.9", screenwidth - 150, screenheight - 20, 20, GRAY);
 		}
 		void goToMenu() {
 			menuspace::initMenu();
